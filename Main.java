@@ -24,11 +24,8 @@ public class Main {
     //Création d'un personnage
     public static Character createCharacter (int num){
         //Initialisation des variables
-        Character character;
         Scanner sc = new Scanner(System.in);
-        int character_strength = 0;
-        int character_agility = 0;
-        int character_intelligence = 0;
+        int character_strength = 0, character_agility = 0, character_intelligence = 0;
         System.out.println("Création du personnage du Joueur " + num +"\nVeuillez choisir la classe de votre personnage (1 : Guerrier, 2 : Rôdeur, 3 : Mage)");
         int character_class = sc.nextInt();
         System.out.println("Niveau du personnage ?");
@@ -45,7 +42,13 @@ public class Main {
                 System.out.println("Vous ne respectez pas les règles de création. Rappel :\n Niveau = Force + Agilité + Intelligence");
             }
         }
-        //Instanciation du personnage
+        return initCharacter(character_class, num,character_level, character_strength, character_agility, character_intelligence);
+    }
+
+    
+    //Instanciation du personnage
+    public static Character initCharacter(int character_class,int num,int character_level,int character_strength,int character_agility,int character_intelligence){
+        Character character;
         switch (character_class) {
             case 1:
                 character = new Warrior(num,character_level, character_strength, character_agility, character_intelligence);         
