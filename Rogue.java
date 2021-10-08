@@ -9,17 +9,17 @@ public class Rogue extends Character {
 
     //Méthode de combat
     @Override
-    public void basicAttack(Character player_defense){
+    public void basicAttack(Character playerDefense){
         System.out.println("Joueur "+this.player+" utilise Tire à l'Arc et inflige "+this.agility+" dommages.");
-        System.out.println("Joueur "+player_defense.player+" perd "+this.agility+" points de vie");
-        player_defense.life += this.agility;
-        if(player_defense.life<=0){
-            System.out.println("Joueur "+player_defense.player+" est mort");
+        System.out.println("Joueur "+playerDefense.player+" perd "+this.agility+" points de vie");
+        playerDefense.life += this.agility;
+        if(playerDefense.life<=0){
+            System.out.println("Joueur "+playerDefense.player+" est mort");
         }
     }
 
     @Override
-    public void specialAttack(Character player_defense){
+    public void specialAttack(Character playerDefense){
         System.out.println("Joueur "+this.player+" utilise Concentration "+this.level/2+" en agilité.");
         this.agility+=this.level/2;
     } 

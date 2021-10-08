@@ -9,24 +9,27 @@ public class Warrior extends Character {
 
     //Méthode de combat
     @Override
-    public void basicAttack(Character player_defense){
+    public void basicAttack(Character playerDefense){
         System.out.println("Joueur "+this.player+" utilise Coup d'Épée et inflige "+this.strength+" dommages.");
-        System.out.println("Joueur "+player_defense.player+" perd "+this.strength+" points de vie");
-        player_defense.life -= this.strength;
-        if(player_defense.life<=0){
-            System.out.println("Joueur "+player_defense.player+" est mort");
+        System.out.println("Joueur "+playerDefense.player+" perd "+this.strength+" points de vie");
+        playerDefense.life -= this.strength;
+        if(playerDefense.life<=0){
+            System.out.println("Joueur "+playerDefense.player+" est mort");
         }
     }
 
     @Override
-    public void specialAttack(Character player_defense){
+    public void specialAttack(Character playerDefense){
         System.out.println("Joueur "+this.player+" utilise Coup de Rage et inflige "+this.strength*2+" dommages.");
-        player_defense.life -= this.strength*2;
-        System.out.println("Joueur "+player_defense.player+" perd "+this.strength*2+" points de vie");
-        if(player_defense.life<=0){
-            System.out.println("Joueur "+player_defense.player+" est mort");
+        playerDefense.life -= this.strength*2;
+        System.out.println("Joueur "+playerDefense.player+" perd "+this.strength*2+" points de vie");
+        if(playerDefense.life<=0){
+            System.out.println("Joueur "+playerDefense.player+" est mort");
         }
         System.out.println("Joueur "+this.player+" perd "+this.strength/2+" points de vie");
-        this.life -= this.strength/2; 
+        this.life -= this.strength/2;
+        if(this.life<=0){
+            System.out.println("Joueur "+this.player+" est mort");
+        } 
     } 
 }

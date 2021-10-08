@@ -9,17 +9,17 @@ public class Wizard extends Character {
 
     //Méthode de combat
     @Override
-    public void basicAttack(Character player_defense){
+    public void basicAttack(Character playerDefense){
         System.out.println("Joueur "+this.player+" utilise Boule de Feu et inflige "+this.intelligence+" dommages.");
-        System.out.println("Joueur "+player_defense.player+" perd "+this.intelligence+" points de vie");
-        player_defense.life -= this.intelligence;
-        if(player_defense.life<=0){
-            System.out.println("Joueur "+player_defense.player+" est mort");
+        System.out.println("Joueur "+playerDefense.player+" perd "+this.intelligence+" points de vie");
+        playerDefense.life -= this.intelligence;
+        if(playerDefense.life<=0){
+            System.out.println("Joueur "+playerDefense.player+" est mort");
         }
     }
 
     @Override
-    public void specialAttack(Character player_defense){
+    public void specialAttack(Character playerDefense){
         if(this.intelligence*2 + this.life < this.level*5){
             this.life += this.intelligence*2;
         } 
