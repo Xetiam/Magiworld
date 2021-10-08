@@ -1,13 +1,12 @@
-public class Character {
+public abstract class Character {
     //Classe représentant les personnages avant le choix de leur spécialisation
-
     //Attribut
-    private int player;
-    private int level;
-    private int life;
-    private int strength;
-    private int agility;
-    private int intelligence;
+    protected int player;
+    protected int level;
+    protected int life;
+    protected int strength;
+    protected int agility;
+    protected int intelligence;
 
     //Constructeur
     public Character(int player, int level, int strength, int agility, int intelligence){
@@ -29,58 +28,18 @@ public class Character {
     }
 
     //Getter/Setter
-    //LEVEL
-    public int getLevel(){
-        return this.level;
-    }
-    
     //LIFE
     public int getLife(){
         return this.life;
     }
 
-    public void setDamage(int newValue){
-        this.life = this.life - newValue;
-    }
-
     public void resetLife(){
         this.life = this.level*5;
     }
-
-    //STRENGTH
-    public int getStrength(){
-        return this.strength;
-    }
-
-    public void setStrength(int newValue){
-        this.strength = newValue;
-    }
-
-    
-    public void setPlayer(int newValue){
-        this.player = newValue;
-    }
-    
-    //AGILITY
-    public int getAgility(){
-        return this.agility;
-    }
-    
-    public void setAgility(int newValue){
-        this.agility = newValue;
-    }
-    
-    //INTELLIGENCE
-    public int getIntelligence(){
-        return this.intelligence;
-    }
-    
-    public void setIntelligence(int newValue){
-        this.intelligence = newValue;
-    }
-
+ 
     //PLAYER
     public int getPlayer(){
-       return this.player;
+        return this.player;
     }
+
 }
