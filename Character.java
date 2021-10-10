@@ -19,13 +19,9 @@ public abstract class Character {
     }
 
     //Méthode de combat
-    public void basicAttack(Character playerDefense){
-        System.out.println("Je donne un coup de poing.\n");
-    }
+    public abstract void basicAttack(Character playerDefense);
 
-    public void specialAttack(Character playerDefense){
-        System.out.println("Je laboure le sol.\n");
-    }
+    public abstract void specialAttack(Character playerDefense);
 
     //Getter/Setter
     //LIFE

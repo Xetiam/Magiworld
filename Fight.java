@@ -6,7 +6,7 @@ public class Fight {
         Character playerOne = createCharacter(1);
         Character playerTwo = createCharacter(2);
         //COMBAT
-        while((playerOne.getLife() > 0 )&( playerTwo.getLife() > 0)){
+        while((playerOne.getLife() > 0 )&&( playerTwo.getLife() > 0)){
             useSkill(playerOne,playerTwo);
             if(playerTwo.getLife()>0){
                 useSkill(playerTwo,playerOne);
@@ -62,8 +62,7 @@ public class Fight {
                 character = new Wizard(num,characterLevel, characterStrength, characterAgility, characterIntelligence);
                 break;
             default:
-                character = new Warrior(0,0,0,0,0);
-                break;
+                throw new IllegalStateException("Classe non valide");
         }
         return character;
     }
@@ -103,6 +102,7 @@ public class Fight {
                 sc.next();
             }
         }
+        //sc.close();
         return val;
     }
 }
